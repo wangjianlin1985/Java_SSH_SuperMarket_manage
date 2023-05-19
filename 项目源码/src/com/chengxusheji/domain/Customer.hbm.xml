@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Customer" table="t_Customer">
+
+          <!-- 主键客户id -->
+          <id name="customerId" column="customerId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 客户名称 -->
+          <property
+            name="customerName"
+            column="customerName"
+            type="string"
+            length="60"
+          />
+
+          <!-- 简单字符串属性: 联系电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 收货地址 -->
+          <property
+            name="address"
+            column="address"
+            type="string"
+            length="90"
+          />
+
+          <!-- 简单字符串属性: 备注 -->
+          <property
+            name="memo"
+            column="memo"
+            type="string"
+            length="200"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

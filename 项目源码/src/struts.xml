@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.i18n.encoding" value="UTF-8"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />
+     <constant name="struts.multipart.maxSize" value="55000000"/> <!-- 文件上传大小限制 -->    
+       
+          
+	 <package name="login" namespace="/login" extends="struts-default">
+	        <action name="login_*" class="loginAction" method="{1}">
+	        	<result name="front_view">/index.jsp</result>
+	        	<result name="main_user_view">/index.jsp</result>
+	        	<result name="error">/error.jsp</result>  
+	        </action>  
+	 </package>
+	 
+         <!-- ProductClassAction配置 -->
+         <package name="ProductClass" namespace="/ProductClass" extends="struts-default">
+           <action name="ProductClass_*" class="productClassAction" method="{1}">
+             <result name="input">/ProductClass/productClass_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/ProductClass/productClass_frontquery_result.jsp</result>
+             <result name="front_show_view">/ProductClass/productClass_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- ProductAction配置 -->
+         <package name="Product" namespace="/Product" extends="struts-default">
+           <action name="Product_*" class="productAction" method="{1}">
+             <result name="input">/Product/product_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Product/product_frontquery_result.jsp</result>
+             <result name="front_show_view">/Product/product_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- DepartmentAction配置 -->
+         <package name="Department" namespace="/Department" extends="struts-default">
+           <action name="Department_*" class="departmentAction" method="{1}">
+             <result name="input">/Department/department_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Department/department_frontquery_result.jsp</result>
+             <result name="front_show_view">/Department/department_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- EmployeeAction配置 -->
+         <package name="Employee" namespace="/Employee" extends="struts-default">
+           <action name="Employee_*" class="employeeAction" method="{1}">
+             <result name="input">/Employee/employee_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Employee/employee_frontquery_result.jsp</result>
+             <result name="front_show_view">/Employee/employee_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- PurchaseAction配置 -->
+         <package name="Purchase" namespace="/Purchase" extends="struts-default">
+           <action name="Purchase_*" class="purchaseAction" method="{1}">
+             <result name="input">/Purchase/purchase_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Purchase/purchase_frontquery_result.jsp</result>
+             <result name="front_show_view">/Purchase/purchase_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- SaleAction配置 -->
+         <package name="Sale" namespace="/Sale" extends="struts-default">
+           <action name="Sale_*" class="saleAction" method="{1}">
+             <result name="input">/Sale/sale_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Sale/sale_frontquery_result.jsp</result>
+             <result name="front_show_view">/Sale/sale_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- SupplierAction配置 -->
+         <package name="Supplier" namespace="/Supplier" extends="struts-default">
+           <action name="Supplier_*" class="supplierAction" method="{1}">
+             <result name="input">/Supplier/supplier_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Supplier/supplier_frontquery_result.jsp</result>
+             <result name="front_show_view">/Supplier/supplier_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- CustomerAction配置 -->
+         <package name="Customer" namespace="/Customer" extends="struts-default">
+           <action name="Customer_*" class="customerAction" method="{1}">
+             <result name="input">/Customer/customer_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Customer/customer_frontquery_result.jsp</result>
+             <result name="front_show_view">/Customer/customer_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- ExchangeAction配置 -->
+         <package name="Exchange" namespace="/Exchange" extends="struts-default">
+           <action name="Exchange_*" class="exchangeAction" method="{1}">
+             <result name="input">/Exchange/exchange_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Exchange/exchange_frontquery_result.jsp</result>
+             <result name="front_show_view">/Exchange/exchange_frontshow.jsp</result>
+           </action>
+         </package>
+
+         <!-- NoticeAction配置 -->
+         <package name="Notice" namespace="/Notice" extends="struts-default">
+           <action name="Notice_*" class="noticeAction" method="{1}">
+             <result name="input">/Notice/notice_add.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="front_query_view">/Notice/notice_frontquery_result.jsp</result>
+             <result name="front_show_view">/Notice/notice_frontshow.jsp</result>
+           </action>
+         </package>
+
+
+	 
+	 
+ 	
+	<!-- NavAction配置 -->
+         <package name="Nav" namespace="/Nav" extends="struts-default">
+           <action name="Nav_*" class="navAction" method="{1}">
+             
+           </action>
+         </package>
+
+ 	 <package name="password" namespace="/password" extends="struts-default">
+	        <action name="ChangePassword" class="changePasswordAction">  
+	        	<result name="change_success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package> 
+	  
+	 <package name="User" namespace="/User" extends="struts-default">
+	        <action name="User_*" class="com.chengxusheji.action.UserAction" method="{1}">  
+	        	<result name="user_query_view">/user_query_result.jsp</result>
+	        	<result name="success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package>  
+	 
+</struts>

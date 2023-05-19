@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Exchange" table="t_Exchange">
+
+          <!-- 主键超市换货单id -->
+          <id name="exchangeId" column="exchangeId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 超市换货超市商品 -->
+          <many-to-one name="productObj"
+            column="productObj"
+            class="Product"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单整型属性: 超市换货数量 -->
+          <property
+            name="count"
+            column="count"
+            type="int"
+
+          />
+
+          <!-- 多对一属性: 超市换货客户 -->
+          <many-to-one name="customerObj"
+            column="customerObj"
+            class="Customer"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单日期型属性: 超市换货日期 -->
+          <property
+            name="exchangeDate"
+            column="exchangeDate"
+            	type="string"
+            	length="20"
+          />
+
+          <!-- 简单字符串属性: 处理结果 -->
+          <property
+            name="handleRes"
+            column="handleRes"
+            type="string"
+            length="500"
+          />
+
+          <!-- 多对一属性: 工作人员 -->
+          <many-to-one name="employeeObj"
+            column="employeeObj"
+            class="Employee"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

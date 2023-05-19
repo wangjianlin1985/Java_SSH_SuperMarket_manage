@@ -1,0 +1,78 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Sale" table="t_Sale">
+
+          <!-- 主键销售id -->
+          <id name="saleId" column="saleId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 销售超市商品 -->
+          <many-to-one name="productObj"
+            column="productObj"
+            class="Product"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 销售客户 -->
+          <many-to-one name="customerObj"
+            column="customerObj"
+            class="Customer"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 销售单价 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单整型属性: 销售数量 -->
+          <property
+            name="count"
+            column="count"
+            type="int"
+
+          />
+
+          <!-- 简单日期型属性: 销售日期 -->
+          <property
+            name="saleDate"
+            column="saleDate"
+            	type="string"
+            	length="20"
+          />
+
+          <!-- 简单字符串属性: 留言备注 -->
+          <property
+            name="memo"
+            column="memo"
+            type="string"
+            length="60"
+          />
+
+          <!-- 多对一属性: 销售员 -->
+          <many-to-one name="employeeObj"
+            column="employeeObj"
+            class="Employee"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

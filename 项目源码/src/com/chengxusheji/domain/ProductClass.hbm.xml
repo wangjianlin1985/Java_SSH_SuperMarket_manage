@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="ProductClass" table="t_ProductClass">
+
+          <!-- 主键超市商品类别id -->
+          <id name="productClassId" column="productClassId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 超市商品类别名称 -->
+          <property
+            name="productClassName"
+            column="productClassName"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
